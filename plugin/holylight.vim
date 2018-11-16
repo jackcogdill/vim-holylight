@@ -5,17 +5,22 @@ if !exists('g:holylight_threshold')
   let g:holylight_threshold = 1000000
 endif
 
+" Dark by default
 let s:light = 0
 
 " These functions can be overridden {{
 
-function HolylightLight()
-  set background=light
-endfunction
+if !exists('*HolylightLight')
+  function HolylightLight()
+    set background=light
+  endfunction
+endif
 
-function HolylightDark()
-  set background=dark
-endfunction
+if !exists('*HolylightDark')
+  function HolylightDark()
+    set background=dark
+  endfunction
+endif
 
 " }}
 
