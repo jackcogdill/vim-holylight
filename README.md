@@ -27,6 +27,25 @@ easily change it.
 Simply run the *bin/realtime-checker* program, then set the `g:holylight_threshold`
 variable to the value that suits you.
 
+### Custom functions
+
+Perhaps simply setting `background` is not enough if you use multiple colorschemes.  
+For this purpose the functions `HolylightLight` and `HolylightDark` can be overridden:
+
+```vim
+function HolylightLight()
+    set background=light
+    colorscheme onehalflight
+    let g:lightline.colorscheme='onehalfdark'
+endfunction
+
+function HolylightDark()
+    set background=dark
+    colorscheme neodark
+    let g:lightline.colorscheme='neodark'
+endfunction
+```
+
 ## The name
 It is named after Stratovarius' [Holy Light](https://www.youtube.com/watch?v=KHVP2anxbH8)
 song.
